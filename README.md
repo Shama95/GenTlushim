@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+1. Open your terminal
+2. git clone https://github.com/Shama95/GenTlushim.git \
+This clones the repo
+
+3. cd into the new folder
+4. npm install\
+This installs the required dependencies
+5. npm start
+
 ## Available Scripts
 
 In the project directory, you can run:
