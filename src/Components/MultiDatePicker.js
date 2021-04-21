@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 
 const MultiDatePicker = ({
-  dateFormat,
-  pickerText,
-  minDate,
-  calcMaxDate,
-  sendSelectedDate,
+  dateFormat = "dd/MM/yyyy", // A date format to be picked and displayed(one of: "yyyy","MM/yyyy" or "dd/MM/yyyy")
+  pickerText = "Click to select a date", // The text displayed in the text box before picking any date
+  minDate = NaN, // A Date object with the minimal date the user will be able to pick, default is no limitation
+  maxDate = NaN, // A Date object with the maximal date the user will be able to pick, default is no limitation
+  sendSelectedDate, // A function to propagte the data back to parent object
 }) => {
   const [pickerDate, setPickerDate] = useState(null);
 
@@ -27,7 +27,7 @@ const MultiDatePicker = ({
       showMonthYearPicker={dateFormat === "MM/yyyy"}
       placeholderText={pickerText}
       minDate={minDate}
-      maxDate={calcMaxDate(new Date())}
+      maxDate={maxDate}
     />
   );
 };
