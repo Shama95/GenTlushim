@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const MultiDatePicker = ({
   dateFormat = "dd/MM/yyyy", // A date format to be picked and displayed(one of: "yyyy","MM/yyyy" or "dd/MM/yyyy")
