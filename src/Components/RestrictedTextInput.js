@@ -1,11 +1,11 @@
 import React from "react";
 
 const RestrictedTextInput = ({
-  label,
-  personalNumber,
-  onNumberChange,
-  regexRestriction,
-  lengthRestriction,
+  label, // A label to be displayed above the input bar
+  personalNumber, // Part of a state - the value; to keep track of the select option and its value
+  onNumberChange, // Part of a state - the update function; to keep track of the select option and its value
+  regexRestriction, // String of regex to restrict the input
+  lengthRestriction, // Length restriction for the input
 }) => {
   const regex = new RegExp(`${regexRestriction}`);
   return (

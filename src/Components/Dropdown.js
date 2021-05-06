@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Dropdown = ({ label, options, selected, onSelectedChange }) => {
+const Dropdown = ({
+  label, // A label to be displayed above the Dropdown
+  options, // A dictionary with pairs of keys and values to display
+  selected, // Part of a state - the value; to keep track of the select option and its value
+  onSelectedChange, // Part of a state - the update function; to keep track of the select option and its value
+}) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
