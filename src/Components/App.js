@@ -8,11 +8,15 @@ import Python from "./Python";
 import T106 from "./T106";
 import T161 from "./T161";
 import Otzar from "./Otzar";
+import Loading from "./Loading";
 
 const App = () => {
   return (
     <div>
       <Header />
+      <Route path="/">
+        <Loading/>
+      </Route>
       <Route path="/Tlush">
         <Tlush />
       </Route>
@@ -31,9 +35,7 @@ const App = () => {
       <Route path="/Python">
         <Python />
       </Route>
-      <br />
-      <br />
-      App
+
     </div>
   );
 };

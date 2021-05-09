@@ -4,9 +4,7 @@ import Link from './Link'
 const Header =()=>{
     return (
         <div className="ui secondary pointing menu">
-            <Link href="/" className="item">
-                Loading
-            </Link>
+            
             <Link href="/Tlush" className="item">
                 Tlush
             </Link>
