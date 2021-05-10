@@ -8,6 +8,7 @@ import Python from "./Python";
 import T106 from "./T106";
 import T161 from "./T161";
 import Otzar from "./Otzar";
+import FormAuth from './FormAuth';
 
 //Time picker imports:
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
@@ -31,7 +32,7 @@ const App = () => {
           <Otzar />
         </Route>
         <Route path="/Permissions">
-          <Permissions />
+          <Permissions> <FormAuth></FormAuth><Permissions/>
         </Route>
         <Route path="/Python">
           <Python />
@@ -43,4 +44,5 @@ const App = () => {
     </MuiPickersUtilsProvider>
   );
 };
+        
 export default App;
