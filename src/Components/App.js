@@ -11,7 +11,7 @@ import Otzar from "./Otzar";
 import Loading from "./Loading";
 
 const App = () => {
-  return (
+  return (//in the app component we use the route component to chose the component being used according to the path. 
     <div>
       <Header />
       <Route path="/">

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from './Link'
 
 const Header =()=>{
-    return (
+    return (//this component changes each url according to what the user presses in the header.
         <div className="ui secondary pointing menu">
             
             <Link href="/Tlush" className="item">
