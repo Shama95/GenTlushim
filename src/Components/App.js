@@ -15,7 +15,7 @@ import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 
 const App = () => {
-  return (//in the app component we use the route component to chose the component being used according to the path. 
+  return (//using Route to navigate based on the path. 
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <div>
         <Header />
