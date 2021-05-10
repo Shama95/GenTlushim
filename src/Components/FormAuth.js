@@ -16,8 +16,9 @@ const FormAuth = props => {
            
             <br/>
             <Container>
-                <form className="ui form" style={{borderRadius:"10px" , border:"solid grey", borderSpacing:"100px",
-                                                    borderCollapse: "separate"}}>
+                <form className="ui form " style={{borderRadius:"100px" , border:"solid lightgrey", borderSpacing:"10000px",
+                                                    paddingTop: '50px', paddingBottom: '50px', paddingLeft: '20px',
+                                                    paddingRight: '20px'}}>
                     <div className="two fields">
                         <div className="field">
                             <label>שם פרטי</label>
