@@ -1,6 +1,6 @@
 .App {
-    text-align: center;/*aligning of the text in the center*/
+    text-align: center;
   }
-  .App-logo {
-    height: 70vmin;/*decides the size of the image*/
+  .App-logo {/*decides the size of the image*/
+    height: 70vmin;
   }
