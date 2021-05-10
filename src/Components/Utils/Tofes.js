@@ -7,25 +7,14 @@ import * as Constants from "../../Constants";
 
 import tempPic from "../../images/temp.jpg";
 
-const Tofes = ({ formType }) => {
+const Tofes = ({ formType, minDate, maxDate }) => {
   const [personalNumber, setPersonalNumber] = useState("");
-  const [population, setPopulation] = useState(populationsDict[0]);
+  const [population, setPopulation] = useState(Constants.populationsDict[0]);
   const [date, setDate] = useState(new Date());
-
-  const minDate = new Date(1993, 1, 1);
-  const maxDate = calcMaxDate(new Date());
-
-  function calcMaxDate(date) {
-    var month = date.getMonth();
-    var year = date.getFullYear();
-    year = month === 11 ? year++ : year;
-    var maxdate = new Date(year, month + 2, 0); //putting zero at the day gives the max day of the previous month
-    return maxdate;
-  }
 
   const ResetForm = () => {
     setPersonalNumber("");
-    setPopulation(populationsDict[0]);
+    setPopulation(Constants.populationsDict[0]);
     setDate(new Date()); //This doesnt work for some reason
   };
 
@@ -35,9 +24,6 @@ const Tofes = ({ formType }) => {
     console.log("Personal Number is " + personalNumber);
   };
 
-  if (formType === formsEnum.FORM_TLUSH) {
-    // whatever
-  }
   return (
     <div className="ui container">
       <div className="ui grid">
@@ -56,18 +42,25 @@ const Tofes = ({ formType }) => {
                 lengthRestriction="9"
               />
             </div>
+
             <div style={{ marginBottom: ".5rem" }}>
-              <Dropdown
-                label="Select a Population"
-                options={populationsDict}
-                selected={population}
-                onSelectedChange={setPopulation}
-              />
+              {formType === Constants.formsEnum.FORM_161 ? null : (
+                <Dropdown
+                  label="Select a Population"
+                  options={Constants.populationsDict}
+                  selected={population}
+                  onSelectedChange={setPopulation}
+                />
+              )}
             </div>
             <div style={{ marginBottom: ".5rem" }}>
               <MultiDatePicker
                 dateFormat={
-                  formType === formsEnum.FORM_TLUSH ? "dd/MM/yyyy" : "MM/yyyy"
+                  formType ===
+                  (Constants.formsEnum.FORM_TLUSH ||
+                    Constants.formsEnum.FORM_161)
+                    ? "MM/yyyy"
+                    : "yyyy"
                 }
                 placeholderText="Select a Date"
                 minDate={minDate}
