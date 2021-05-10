@@ -10,33 +10,38 @@ import T161 from "./T161";
 import Otzar from "./Otzar";
 import Loading from "./Loading";
 
+//Time picker imports:
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+
 const App = () => {
   return (//in the app component we use the route component to chose the component being used according to the path. 
-    <div>
-      <Header />
-      <Route path="/">
-        <Loading/>
-      </Route>
-      <Route path="/Tlush">
-        <Tlush />
-      </Route>
-      <Route path="/106">
-        <T106 />
-      </Route>
-      <Route path="/161">
-        <T161 />
-      </Route>
-      <Route path="/Otzar">
-        <Otzar />
-      </Route>
-      <Route path="/Permissions">
-        <Permissions />
-      </Route>
-      <Route path="/Python">
-        <Python />
-      </Route>
-
-    </div>
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <div>
+        <Header />
+        <Route path="/">
+          <Loading/>
+        </Route>
+        <Route path="/Tlush">
+          <Tlush />
+        </Route>
+        <Route path="/106">
+          <T106 />
+        </Route>
+        <Route path="/161">
+          <T161 />
+        </Route>
+        <Route path="/Otzar">
+          <Otzar />
+        </Route>
+        <Route path="/Permissions">
+          <Permissions />
+        </Route>
+        <Route path="/Python">
+          <Python />
+        </Route>
+      </div>
+    </MuiPickersUtilsProvider>
   );
 };
 export default App;
