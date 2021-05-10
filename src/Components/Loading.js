@@ -3,7 +3,7 @@ import Logo from "../images/sachar.jpg";
 import '../css/app.css';
 
 const Loading=()=>{
-    return (
+    return (//this component is the main page component, it uses the css file to center the message and the image.
         <div className="App">
             <h1 style={{  padding:'0px'}}>
                 Welcome To The New Sachar Website!!!!
@@ -14,5 +14,3 @@ const Loading=()=>{
     );
 }
 export default Loading;
-
-// <div style={{ marginTop:'0px',backgroundImage: `url(${Logo})`, padding:'32px', width:'100%', height: '100%'}} />
