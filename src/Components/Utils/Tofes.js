@@ -29,7 +29,7 @@ const Tofes = ({ formType, minDate, maxDate }) => {
       <div className="ui grid">
         <div className="ui row">
           <div className="eleven wide column">
-            <img class="ui fluid image" src={tempPic} alt="pic" />
+            <img className="ui fluid image" src={tempPic} alt="pic" />
           </div>
           <div className="five wide column">
             <div style={{ marginBottom: ".5rem" }}>
@@ -57,10 +57,10 @@ const Tofes = ({ formType, minDate, maxDate }) => {
               <MultiDatePicker
                 dateFormat={
                   formType ===
-                  (Constants.formsEnum.FORM_TLUSH ||
-                    Constants.formsEnum.FORM_161)
-                    ? "MM/yyyy"
-                    : "yyyy"
+                  (!Constants.formsEnum.FORM_161 &&
+                    !Constants.formsEnum.FORM_TLUSH)
+                    ? "yyyy"
+                    : "MM/yyyy"
                 }
                 placeholderText="Select a Date"
                 minDate={minDate}

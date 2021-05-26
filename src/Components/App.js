@@ -38,7 +38,6 @@ const App = () => {
         </Route>
         <br />
         <br />
-        App
       </div>
     </MuiPickersUtilsProvider>
   );
