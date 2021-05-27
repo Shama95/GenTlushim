@@ -4,24 +4,29 @@ import Dropdown from "./Dropdown";
 import MultiDatePicker from "./MultiDatePicker";
 import ConditionalButton from "./ConditionalButton";
 import * as Constants from "../../Constants";
-
-import tempPic from "../../images/temp.jpg";
+import VisualizeTlush from "./VisualizeTlush";
 
 const Tofes = ({ formType, minDate, maxDate }) => {
   const [personalNumber, setPersonalNumber] = useState("");
   const [population, setPopulation] = useState(Constants.populationsDict[0]);
   const [date, setDate] = useState(new Date());
+  const [data, setData] = useState({});
 
   const ResetForm = () => {
     setPersonalNumber("");
     setPopulation(Constants.populationsDict[0]);
     setDate(new Date()); //This doesnt work for some reason
+    setData({});
   };
 
   const SubmitForm = () => {
-    console.log("Date is " + date);
-    console.log("Population is " + population.value);
-    console.log("Personal Number is " + personalNumber);
+    const tlush_data = {
+      formType: formType,
+      personalNumber: personalNumber,
+      population: population,
+      date: date,
+    };
+    setData(tlush_data);
   };
 
   return (
@@ -29,7 +34,7 @@ const Tofes = ({ formType, minDate, maxDate }) => {
       <div className="ui grid">
         <div className="ui row">
           <div className="eleven wide column">
-            <img className="ui fluid image" src={tempPic} alt="pic" />
+            <VisualizeTlush data={data} />
           </div>
           <div className="five wide column">
             <div style={{ marginBottom: ".5rem" }}>
