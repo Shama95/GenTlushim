@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import Header from "./Header";
 import Route from "./Route";
 import Tlush from "./Tlush";
-import Permissions from "./Permissions";
 import Python from "./Python";
 import T106 from "./T106";
 import T161 from "./T161";
@@ -32,14 +31,13 @@ const App = () => {
           <Otzar />
         </Route>
         <Route path="/Permissions">
-          <Permissions> <FormAuth></FormAuth><Permissions/>
+           <FormAuth></FormAuth>
         </Route>
         <Route path="/Python">
           <Python />
         </Route>
         <br />
         <br />
-        App
       </div>
     </MuiPickersUtilsProvider>
   );
