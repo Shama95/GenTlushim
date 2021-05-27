@@ -24,20 +24,22 @@ const MultiDatePicker = ({
 
   if (!ValidateFormat(dateFormat)) return; //crash in case the date format is not supported
   return (
-    <DatePicker
-      autoOk
-      format={dateFormat}
-      views={FormatToViews(dateFormat)}
-      variant="inline"
-      label={placeholderText}
-      value={pickerDate}
-      onChange={(date) => {
-        setPickerDate(date);
-        sendSelectedDate(date);
-      }}
-      minDate={minDate}
-      maxDate={maxDate}
-    />
+    <div>
+      <DatePicker
+        autoOk
+        format={dateFormat}
+        views={FormatToViews(dateFormat)}
+        variant="inline"
+        label={placeholderText}
+        value={pickerDate}
+        onChange={(date) => {
+          setPickerDate(date);
+          sendSelectedDate(date);
+        }}
+        minDate={minDate}
+        maxDate={maxDate}
+      />
+    </div>
   );
 };
 
