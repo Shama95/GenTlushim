@@ -1,51 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Shama from './Shama';
-import Addir from './Addir';
-import Tamir from './Tamir';
-import Aviv from './Aviv';
-import Header from './Header';
-import Route from './Route';
-import Tlush from './Tlush';
-import Permissions from './Permissions';
-import Python from './Python';
-import T106 from './T106';
-import T161 from './T161';
-import Otzar from './Otzar';
+import React from "react";
+import ReactDOM from "react-dom";
+import Header from "./Header";
+import Route from "./Route";
+import Tlush from "./Tlush";
+import Permissions from "./Permissions";
+import Python from "./Python";
+import T106 from "./T106";
+import T161 from "./T161";
+import Otzar from "./Otzar";
+import Loading from "./Loading";
 
-const App=()=>{
-    return (
-    <div>
-        <Header/>
+//Time picker imports:
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+
+const App = () => {
+  return (//using Route to navigate based on the path. 
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <div>
+        <Header />
+        <Route path="/">
+          <Loading/>
+        </Route>
         <Route path="/Tlush">
-            <Tlush />
+          <Tlush />
         </Route>
         <Route path="/106">
-            <T106 />
+          <T106 />
         </Route>
         <Route path="/161">
-            <T161 />
+          <T161 />
         </Route>
         <Route path="/Otzar">
-            <Otzar />
+          <Otzar />
         </Route>
         <Route path="/Permissions">
-            <Permissions />
+          <Permissions />
         </Route>
         <Route path="/Python">
-            <Python />
+          <Python />
         </Route>
-        
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        App
-        <Shama/>
-		<Addir/>
-        <Tamir/>
-        <Aviv/>
-    </div>
-    );
-}
+      </div>
+    </MuiPickersUtilsProvider>
+  );
+};
 export default App;
