@@ -1,0 +1,14 @@
+.hero { 
+
+    
+}
+
+.hero::before {
+    background-image: url('${Image}');
+    background-repeat: 'no-repeat';
+    background-attachment: 'fixed';
+    background-position: '50% 0%';
+    background-size: 'auto';
+    opacity: '0.5';
+
+  }

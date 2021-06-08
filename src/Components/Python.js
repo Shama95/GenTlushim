@@ -5,15 +5,32 @@ import MultiDatePicker from "./Utils/MultiDatePicker";
 import ConditionalButton from "./Utils/ConditionalButton";
 import * as Constants from "../Constants";
 
+import Image from '../resources/analysis.jpg'; // Import using relative path
+
+const styles = {
+  paperContainer: {
+      backgroundImage: `url(${Image})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      backgroundPosition: '50% 0%',
+      backgroundSize: 'auto',
+      opacity: '1',
+  }
+};
+
+
 
 const Python=()=>{
-    var formType = NaN, minDate = NaN, maxDate = NaN
-    const [personalNumber, setPersonalNumber] = useState("");
+    const minDate = new Date();
+    minDate.setMonth(minDate.getMonth() + 1);
+    minDate.setFullYear(minDate.getFullYear() - 1);
+    const maxDate = new Date();
+    const [personalNumbers, setPersonalNumbers] = useState("");
     const [population, setPopulation] = useState(Constants.populationsDict[0]);
     const [date, setDate] = useState(new Date());
 
     const ResetForm = () => {
-        setPersonalNumber("");
+        setPersonalNumbers("");
         setPopulation(Constants.populationsDict[0]);
         setDate(new Date()); //This doesnt work for some reason
       };
@@ -21,22 +38,25 @@ const Python=()=>{
       const SubmitForm = () => {
         console.log("Date is " + date);
         console.log("Population is " + population.value);
-        console.log("Personal Number is " + personalNumber);
+        console.log("Personal Number is " + personalNumbers);
       };
 
+
     return (
-        <div className="ui container">
-        <div className="ui grid">
-          <div className="ui row">
-            <div className="eleven wide column">
-            </div>
-            <div className="five wide column">
+      <div class python>
+            <div 
+                      style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                  }}>
               <div style={{ marginBottom: ".5rem" }}>
                 <RestrictedTextInput
                   label="Enter Personal Number"
                   placeholderText="Some ID..."
-                  data={personalNumber}
-                  onDataChange={setPersonalNumber}
+                  data={personalNumbers}
+                  onDataChange={setPersonalNumbers}
                   regexRestriction="^[0-9]{1,9}(?:[ ,\n][0-9]{0,9})*$"
                   lengthRestriction="524288"
                   type="area"
@@ -44,35 +64,32 @@ const Python=()=>{
               </div>
   
               <div style={{ marginBottom: ".5rem" }}>
-                {formType === Constants.formsEnum.FORM_161 ? null : (
                   <Dropdown
                     label="Select a Population"
                     options={Constants.populationsDict}
                     selected={population}
                     onSelectedChange={setPopulation}
                   />
-                )}
               </div>
               <div style={{ marginBottom: ".5rem" }}>
                 <MultiDatePicker
                   dateFormat="MM/yyyy"
-                  placeholderText="Select a Date"
+                  placeholderText="Select a Month"
                   minDate={minDate}
                   maxDate={maxDate}
                   sendSelectedDate={setDate}
                 />
+
               </div>
               <div style={{ marginBottom: ".5rem" }}>
                 <ConditionalButton
                   leftText="Reset"
-                  rightText="Search"
+                  rightText="Run"
                   onLeftClick={ResetForm}
                   onRightClick={SubmitForm}
                 />
               </div>
-            </div>
           </div>
-        </div>
       </div>
     );
 }
