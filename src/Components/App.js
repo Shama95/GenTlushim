@@ -8,6 +8,7 @@ import T106 from "./T106";
 import T161 from "./T161";
 import Otzar from "./Otzar";
 import FormAuth from './FormAuth';
+import Loading from "./Loading";
 
 //Time picker imports:
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
@@ -18,6 +19,13 @@ const App = () => {
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <div>
         <Header />
+  return (//using Route to navigate based on the path. 
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <div>
+        <Header />
+        <Route path="/">
+          <Loading/>
+        </Route>
         <Route path="/Tlush">
           <Tlush />
         </Route>
