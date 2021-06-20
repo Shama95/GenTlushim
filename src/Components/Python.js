@@ -4,6 +4,7 @@ import Dropdown from "./Utils/Dropdown";
 import MultiDatePicker from "./Utils/MultiDatePicker";
 import ConditionalButton from "./Utils/ConditionalButton";
 import * as Constants from "../Constants";
+import './python.css';
 
 import Image from '../resources/analysis.jpg'; // Import using relative path
 
@@ -32,7 +33,7 @@ const Python=()=>{
     const ResetForm = () => {
         setPersonalNumbers("");
         setPopulation(Constants.populationsDict[0]);
-        setDate(new Date()); //This doesnt work for some reason
+        setDate(new Date()); 
       };
     
       const SubmitForm = () => {
@@ -43,7 +44,7 @@ const Python=()=>{
 
 
     return (
-      <div class python>
+      <div class='python'>
             <div 
                       style={{
                       display: 'flex',

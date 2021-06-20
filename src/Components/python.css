@@ -4,7 +4,7 @@
 }
 
 .hero::before {
-    background-image: url('${Image}');
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.commbox.io%2Fhow-data-analysis-and-reports-can-improve-customer-service%2F&psig=AOvVaw1CNYc_ZKwoxETDHpd1yDKL&ust=1623224911477000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiI753Gh_ECFQAAAAAdAAAAABAD');
     background-repeat: 'no-repeat';
     background-attachment: 'fixed';
     background-position: '50% 0%';
