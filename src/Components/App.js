@@ -19,6 +19,9 @@ const App = () => {
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <div>
         <Header />
+        <Route path="/">
+          <Loading/>
+        </Route>
         <Route path="/Tlush">
           <Tlush />
         </Route>
@@ -37,9 +40,6 @@ const App = () => {
         <Route path="/Python">
           <Python />
         </Route>
-        <br />
-        <br />
-        App
       </div>
     </MuiPickersUtilsProvider>
   );
