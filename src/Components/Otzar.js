@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react"
 import CSVReader from 'react-csv-reader'
 
-import '../App.css'
+import '../CSS/otzar.css'
 
 function Otzar() {
 
