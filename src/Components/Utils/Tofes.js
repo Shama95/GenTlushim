@@ -19,7 +19,7 @@ const Tofes = ({ formType, minDate, maxDate }) => {
     setData({});
   };
 
-  const SubmitForm = () => {
+  const OnFormSubmit = () => {
     const tlush_data = {
       formType: formType,
       personalNumber: personalNumber,
@@ -78,7 +78,7 @@ const Tofes = ({ formType, minDate, maxDate }) => {
                 leftText="Reset"
                 rightText="Search"
                 onLeftClick={ResetForm}
-                onRightClick={SubmitForm}
+                onRightClick={OnFormSubmit}
               />
             </div>
           </div>
