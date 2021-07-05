@@ -1,18 +1,24 @@
 import React from 'react'
 import { useState } from "react"
 import CSVReader from 'react-csv-reader'
+import Picker from './Utils/MultiDatePicker'
 
-import '../CSS/otzar.css'
+
+import '../css/Otzar.css'
 
 function Otzar() {
-
+  const minDate= new Date()
+  const maxDate = new Date()
+  minDate.setMonth(minDate.getMonth() + 1);
+  minDate.setFullYear(minDate.getFullYear() - 1);
+  maxDate.setMonth(maxDate.getMonth() + 2);
+  // maxDate.setFullYear(maxDate.getFullYear());
   const [mails, setMail] = useState([])
   const [numbers, setnumbers] = useState([])
   const [value, setValue] = useState('')
   const [success, setSuccess] = useState(false)
   const [file, setFile] = useState(false)
   let final ={numbers,mails} //change file to json!!
-
 
   const handleMiClick = () => {
     //change to adir component
@@ -56,6 +62,7 @@ function Otzar() {
         <CSVReader onFileLoaded={(data, fileInfo) => handleData(data)} />
 
       </div>
+      <div className="picker"><Picker  maxDate={maxDate} minDate={minDate} dateFormat = "MM/yyyy" sendSelectedDate={(date)=>console.log(date.getMonth())} /></div>
       <div className="field">
         <label>Send notification to: </label>
 
