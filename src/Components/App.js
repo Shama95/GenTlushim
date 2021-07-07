@@ -8,14 +8,15 @@ import Python from "./Python";
 import T106 from "./T106";
 import T161 from "./T161";
 import Otzar from "./Otzar";
-import Loading from "./Loading";
+import MfDependencies from "./MfDependencies";
 
 //Time picker imports:
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 
 const App = () => {
-  return (//using Route to navigate based on the path. 
+  return (
+    //using Route to navigate based on the path.
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <div>
         <Header />
@@ -37,9 +38,9 @@ const App = () => {
         <Route path="/Python">
           <Python />
         </Route>
-        <br />
-        <br />
-        App
+        <Route path="/MfDependencies">
+          <MfDependencies />
+        </Route>
       </div>
     </MuiPickersUtilsProvider>
   );
